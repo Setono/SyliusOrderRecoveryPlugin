@@ -40,6 +40,6 @@ final class OrderCookieSubscriber implements EventSubscriberInterface
             return;
         }
 
-        $event->getResponse()->headers->setCookie(Cookie::create('ssor_order', $tokenValue, new \DateTime('+7 days'))); // todo configuration option, cookie time
+        $event->getResponse()->headers->setCookie(Cookie::create('ssor_order', $tokenValue, new \DateTime('+7 days'))); // todo configuration option, cookie time. Should probably be the same time as the cancellation period in Sylius
     }
 }
